@@ -1,0 +1,35 @@
+server:
+  servlet:
+    contextPath: /lab/demo
+springdoc:
+  api-docs:
+    path: /api-docs
+# MySql
+# spring:
+#   datasource:
+#     driver-class-name: ${DB_DRIVER_CLASS_NAME:org.mariadb.jdbc.Driver}
+#     url: ${DB_JDBC_URL:jdbc:mariadb://localhost:3306/db-demo}
+#     username: ${DB_USERNAME:root}
+#     password: ${DB_PASSWORD:}
+#   jpa:
+#     hibernate:
+#       ddl-auto: ${DB_JPA_HIBERNATE_DDL_AUTO:create-drop}
+#     show-sql: ${DB_JPA_SHOW_SQL:false}
+#     properties:
+#       hibernate:
+#         dialect: ${DB_JPA_PROPERTIES_HIBERNATE_DIALECT:org.hibernate.dialect.MySQL5Dialect}
+
+# H2
+spring:
+  datasource:
+    driver-class-name: ${DB_DRIVER_CLASS_NAME:org.h2.Driver}
+    url: ${DB_JDBC_URL:jdbc:h2:mem:db-demo;DB_CLOSE_DELAY=-1;MODE=MySQL;NON_KEYWORDS=USER}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: ${DB_JPA_HIBERNATE_DDL_AUTO:create}
+    show-sql: ${DB_JPA_SHOW_SQL:false}
+    properties:
+      hibernate:
+        dialect: ${DB_JPA_PROPERTIES_HIBERNATE_DIALECT:org.hibernate.dialect.H2Dialect}
